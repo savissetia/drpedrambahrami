@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروپوزال استراتژیک ساویس ستیا - جناب آقای دکتر پدرام بهرامی</title>
+    <style>
+        :root {
+            --bg-primary: #07080c;
+            --bg-secondary: #0f111a;
+            --bg-card: #151824;
+            --accent: #d4af37;
+            --accent-glow: rgba(212, 175, 55, 0.2);
+            --text-main: #f3f4f6;
+            --text-muted: #a0aec0;
+            --border: #232a38;
+            --success: #10b981;
+            --viral: #ff0055;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.8;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* Premium Header */
+        header {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #171b2a 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        header::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: linear-gradient(to bottom, var(--accent), var(--viral));
+        }
+
+        .meta-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .meta-right h1 { font-size: 2.4rem; color: #fff; margin-bottom: 0.5rem; font-weight: 900; letter-spacing: -0.5px; }
+        .meta-right p { color: var(--text-muted); font-size: 1.1rem; }
+        .meta-left {
+            background: rgba(255,255,255,0.02); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .meta-left div { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-muted); }
+        .meta-left span { color: var(--accent); font-weight: 800; }
+        .meta-left .client-name { color: #fff; font-size: 1.1rem; border-bottom: 1px dashed var(--border); padding-bottom: 0.3rem; margin-bottom: 0.8rem; display: block; }
+
+        .section-title {
+            font-size: 1.7rem; color: #fff; margin-top: 3rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; border-bottom: 2px solid var(--border); padding-bottom: 0.75rem;
+        }
+        .section-title::before { content: ''; display: inline-block; width: 8px; height: 32px; background: var(--accent); border-radius: 4px; }
+
+        /* Scenarios Styling */
+        .scenarios-container { display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 4rem; }
+        .scenario-card {
+            background-color: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden;
+        }
+        .scenario-card:hover { border-color: var(--accent); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); }
+        .scenario-num { position: absolute; top: 1.5rem; left: 2rem; font-size: 4rem; font-weight: 900; color: rgba(255,255,255,0.02); line-height: 1; }
+        .scenario-title { font-size: 1.45rem; color: #fff; font-weight: 800; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); max-width: 85%; }
+
+        .meta-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .badge { font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: 6px; font-weight: 600; }
+        .badge-doctor { background: rgba(212, 175, 55, 0.08); color: var(--accent); border: 1px solid rgba(212, 175, 55, 0.2); }
+        .badge-platform { background: rgba(255, 255, 255, 0.04); color: var(--text-main); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .badge-metric { background: rgba(0, 242, 254, 0.08); color: #00f2fe; border: 1px solid rgba(0, 242, 254, 0.2); }
+
+        /* Metric Analytics Panel */
+        .analytics-panel {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.03);
+        }
+        .metric-box { display: flex; flex-direction: column; gap: 0.25rem; }
+        .metric-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+        .metric-value { font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; }
+        .val-success { color: var(--success); }
+        .val-viral { color: var(--viral); }
+        
+        /* Progress Bar for Visual Depth */
+        .progress-bar-bg { background: rgba(255,255,255,0.05); height: 6px; border-radius: 3px; width: 100%; margin-top: 0.25rem; overflow: hidden; }
+        .progress-fill-success { background: var(--success); height: 100%; }
+        .progress-fill-viral { background: var(--viral); height: 100%; }
+
+        .details-block { display: flex; flex-direction: column; gap: 1.25rem; }
+        .details-item { background: rgba(0, 0, 0, 0.15); padding: 1.5rem; border-radius: 10px; border-right: 4px solid var(--border); }
+        .details-item.highlight { border-right-color: var(--accent); }
+        .details-label { font-weight: 800; color: #fff; margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .details-text { color: var(--text-muted); font-size: 1rem; text-align: justify; white-space: pre-line; }
+
+        footer { text-align: center; border-top: 1px solid var(--border); padding-top: 3rem; margin-top: 6rem; color: var(--text-muted); font-size: 1rem; }
+
+        @media (max-width: 768px) {
+            .meta-container { flex-direction: column; align-items: flex-start; }
+            .meta-left { width: 100%; text-align: right; }
+            .scenario-num { display: none; }
+            .scenario-title { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Block -->
+    <header>
+        <div class="meta-container">
+            <div class="meta-right">
+                <h1>پروپوزال جامع مهندسی رسانه و استراتژی وایرال مارکتینگ</h1>
+                <p>سند ارزیابی و ماتریس محتوایی بنچمارک‌های کلینیکال طراز اول بین‌المللی</p>
+            </div>
+            <div class="meta-left">
+                <span class="client-name">کارفرما: جناب آقای دکتر پدرام بهرامی</span>
+                <div>طراح استراتژی و پروپوزال: <span>کمال تسبیحی</span></div>
+                <div>مجموعه توسعه: <span>ساویس ستیا</span></div>
+                <div>استاندارد مرجع: <span>CreativeOS / آتینو پریمیوم</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1 -->
+    <h2 class="section-title">بخش اول: ده الگوی وایرال کانتورینگ ساختاری و تکنیکال</h2>
+    <div class="scenarios-container">
+
+        <!-- Scenario 1 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۱</span>
+            <div class="scenario-title">۱. سناریوی «تست پینچ پوستی و کاهش الاستیسیته» (The Skin Pinch Test)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر سمن کاناتپسی (Dr. Seman Kanatpasi) - متخصص پوست ترکیه/آلمان</span>
+                <span class="badge badge-platform">بستر انتشار: تیک‌تاک و اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۴.۷ میلیون ویو</span>
+            </div>
+            
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۲٪ <small style="font-size:0.75rem; font-weight:normal;">(بسیار بالا)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 92%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۴.۷x <small style="font-size:0.75rem; font-weight:normal;">(بومی پلتفرم)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 88%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۰۸٪ <small style="font-size:0.75rem; font-weight:normal;">(تکرار مجدد)</small></span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر پوست پشت دست خودش رو چنگ می‌زنه (پینچ می‌کند) و رها میکنه؛ پوست سریع برمی‌گرده. بعد همین کار رو روی گونه بیمار انجام میده و پوست با تأخیر ۲ ثانیه‌ای برمی‌گرده. دکتر رو به دوربین خیلی ساده می‌گه: «این کاهش الاستیسیته لایه‌های عمقیه. وقتی پوستت دیر برمی‌گرده، کرم زدن بی‌فایده‌ست؛ باید فونداسیون زیرش رو محکم کنی.»</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۲</span>
+            <div class="scenario-title">۲. سناریوی «خطای خط خنده و تزریقِ معکوس» (The Nasolabial Paradox)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر شاین روی (Dr. Shayan Roy) - کلینیک کانتورینگ دبی</span>
+                <span class="badge badge-platform">بستر انتشار: اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۳.۱ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۵٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 85%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۳.۱x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 75%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۹۴٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">ویدیو با نمای بسیار نزدیک از خط خنده عمیق بیمار شروع می‌شه. دکتر با کانیول به جای اینکه وارد خط خنده بشه، دستش رو می‌بره سمت خط مو (شقیقه) و از اونجا تزریق می‌کنه. در حین تزریق، خط خنده از راه دور باز می‌شه. کپشن ویدیو: «درمان خط خنده، توی خط خنده نیست؛ توی فونداسیون شقیقه‌ست.»</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۳</span>
+            <div class="scenario-title">۳. سناریوی «چالش اولتراسوند زنده پوست» (The Live Ultrasound View)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر سلیم پورموسوی (Dr. Salim Pourmoosavi) - مرکز تخصصی کانتورینگ نچرال (ونکوور)</span>
+                <span class="badge badge-platform">بستر انتشار: اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۱.۸ میلیون ویو (بیشترین نرخ سیو ویدیو)</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۶٪ <small style="font-size:0.75rem; font-weight:normal;">(اعتمادسازی مطلق)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 96%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۱.۸x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 55%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۱۵٪ <small style="font-size:0.75rem; font-weight:normal;">(نرخ سیو فوق بالا)</small></span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر دستگاه سونوگرافی پرتونگاری پوست (Ultrasound) رو روی صورت بیمار می‌گذاره و مانیتور رو نشون میده. لایه‌های پوست، چربی و استخوان کاملاً مشخصه. دکتر سرنگ رو وارد می‌کنه و روی مانیتور به مخاطب نشون میده که ژل دقیقاً کجا می‌شینه. او می‌گه: «پزشکی که بدون سونوگرافی یا بدون شناخت لایه عمقی تزریق می‌کنه، داره کورکورانه کار می‌کنه.»</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۴</span>
+            <div class="scenario-title">۴. سناریوی «تست قرینگی با فیلتر آینه معکوس» (The True Mirror Analysis)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر بنجی دایلون (Dr. Benji Dhillon) - بریتانیا</span>
+                <span class="badge badge-platform">بستر انتشار: تیک‌تاک</span>
+                <span class="badge badge-metric">بازخورد: ۶.۲ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۹٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 89%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۶.۲x <small style="font-size:0.75rem; font-weight:normal;">(انفجار الگوریتمی)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 95%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۰۲٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر از فیلتر اینورتر (Inverted Filter) تیک‌تاک که صورت واقعی رو بدون آینه‌ای شدن نشون میده روی بیمار استفاده می‌کنه. نقص‌ها و کجی‌های کانتور چهره بیمار که خودش هیچ‌وقت متوجهشون نشده بود واضح می‌شن. دکتر با مارکر نقاط برطرف‌کننده عدم تقارن رو علامت می‌زنه و بعد از تزریقِ نچرال، دوباره فیلتر رو می‌ذاره تا بالانس ۱۰۰ درصدی رو نشون بده.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 5 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۵</span>
+            <div class="scenario-title">۵. سناریوی «تشریحِ فیلر ساندویچی» (The Sandwich Technique Breakdown)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر تانیا فیلیپس (Dr. Tanya Phillips) - استرالیا</span>
+                <span class="badge badge-platform">بستر انتشار: یوتیوب شورتس و اینستاگرام</span>
+                <span class="badge badge-metric">بازخورد: ۲.۹ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۱٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 81%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۲.۹x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 70%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۹۱٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر یک تکه نان ساندویچی، گوجه و کاهو برمی‌داره. نان زیرین رو استخوان, کاهو رو چربی و نان رویی رو پوست فرض می‌کنه. با سرنگ فیلر رو تزریق می‌کنه بین لایه‌ها و نشون میده اگر فیلر جای اشتباه (توی لایه کاهو یا چربی) بره چطور ساندویچ دفرمه می‌شه و اگر روی نان زیرین (استخوان) بیاد چطور ساندویچ محکم می‌شه.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 6 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۶</span>
+            <div class="scenario-title">۶. سناریوی «معاینه خنده دینامیک» (The Dynamic Smile Assessment)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر راج عقیلی (Dr. Raj Acquilla) - از اساتید بین‌المللی تزریق زیبایی</span>
+                <span class="badge badge-platform">بستر انتشار: اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۵.۴ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۰٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 90%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۵.۴x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 92%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۰۶٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">ویدیو با صورت در حال استراحت (Static) بیمار شروع می‌شه که کاملاً بی‌نقصه. اما دکتر از بیمار می‌خواد بلند بخنده (Dynamic)؛ به محض خندیدن، ژل‌های قدیمی زیر چشمش قلمبه می‌شن. دکتر می‌گه: «صورت شما مجسمه نیست، حرکت می‌کنه. هنر پزشک اینه که فرم متحرک صورت رو کانتور کنه نه فرم ثابتش رو.»</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 7 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۷</span>
+            <div class="scenario-title">۷. سناریوی «آنالیز خستگی چهره بعد از پاسی از شب» (The Midnight Face Look)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر جولیان دسیلوا (Dr. Julian De Silva) - جراح و پزشک هارلی استریت لندن</span>
+                <span class="badge badge-platform">بستر انتشار: تیک‌تاک</span>
+                <span class="badge badge-metric">بازخورد: ۳.۸ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۷٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 87%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۳.۸x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 80%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۹۷٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">بیمار ساعت ۸ شب بعد از یک روز کاری شلوغ روی صندلی می‌شینه. نور مطب کمه. دکتر می‌گه: «همه صبح‌ها قشنگن؛ اما کانتورینگ درست اونیه که ساعت ۸ شب خستگی و گودی زیر چشم و افتادگی زاویه رو نشون نده.» فرآیند ترمیم نقاط خستگی چهره بدون افزایش حجم کانتور رو در همان ساعت شب انجام میده.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 8 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۸</span>
+            <div class="scenario-title">۸. سناریوی «چالشِ یک سی‌سی» (The 1cc Challenge)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر متیو رابل (Dr. Matthew Roberson) - آمریکا</span>
+                <span class="badge badge-platform">بستر انتشار: اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۴.۵ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۳٪ <small style="font-size:0.75rem; font-weight:normal;">(ایده‌آل مالی)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 93%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۴.۵x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 86%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۰۴٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر یک سرنگِ دقیقاً ۱ سی‌سی رو رو به دوربین می‌گیره و می‌گه: «خیلی‌ها فکر می‌کنن برای تغییر کانتور کل صورت باید ۵ سی‌سی ژل بزنن.» او این ۱ سی‌سی رو تقسیم می‌کنه به مایکرو-دوزهای ۰.۱ سی‌سی و در ۱۰ نقطه میکروسکوپیِ کل چهره تزریق می‌کنه. در نهایت لیفت کل صورت رو فقط با همان ۱ سی‌سی نمایش میده.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 9 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۰۹</span>
+            <div class="scenario-title">۹. سناریوی «ردپای پیری در کانتور تحتانی» (The Lower Face Aging Secret)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر ناوا گرینفیلد (Dr. Nava Greenfield) - نیویورک</span>
+                <span class="badge badge-platform">بستر انتشار: اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۲.۳ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۴٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 84%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۲.۳x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 60%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۸۹٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر دستش رو می‌ذاره روی چشم‌ها و بینی بیمار و می‌گه: «اگر می‌خوای سن واقعی یک نفر رو بفهمی، به چشم‌هاش نگاه نکن؛ به این خطِ افتادگیِ کنار چانه (Jowls) نگاه کن.» بعد فرآیند مهارِ افتادگیِ این خط رو با کانتورینگِ عمقی فک بدون غول‌آسا کردن زاویه فک نشون میده.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 10 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۱۰</span>
+            <div class="scenario-title">۱۰. سناریوی «آنتی فوتوشاپ زنده» (The Live Anti-Photoshop)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط: دکتر استفانی ویلیامز (Dr. Stefanie Williams) - کلینیک EUDELO لندن</span>
+                <span class="badge badge-platform">بستر انتشار: تیک‌تاک و ریلز</span>
+                <span class="badge badge-metric">بازخورد: ۵.۹ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۱٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 91%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۵.۹x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 94%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۰۱٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">یک ویدیو از اینستاگرام یک مدل رو نشون میده که کانتور صورتش با فیلترِ ویدیویی کاملاً زاویه‌داره. بعد مدل رو در واقعیت و در مطب بدون فیلتر نشون میده که صورتش به خاطر تزریق سطحی افتاده شده. دکتر می‌گه: «فیلترهای اینستاگرام نقصِ کانتورینگ‌های بد رو می‌پوشونن. ما اینجا کانتور واقعیِ بدون فیلتر می‌سازیم.»</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 2 -->
+    <h2 class="section-title">بخش دوم: پنج سناریوی وایرال شده توسط کلینیک‌های سرشناس دنیا (رویکرد نچرال)</h2>
+    <div class="scenarios-container">
+
+        <!-- Scenario 11 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۱۱</span>
+            <div class="scenario-title">۱۱. سناریوی «نقشه‌کشی هندسی صورت» (Facial Mapping)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط چه کسی: دکتر جاوید خان (Dr. Javid Khan) - کلینیک لوکس در لندن</span>
+                <span class="badge badge-platform">کجا پیاده شد: اینستاگرام ریلز (Instagram Reels)</span>
+                <span class="badge badge-metric">بازخورد: ۴.۲ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۵٪ <small style="font-size:0.75rem; font-weight:normal;">(۳۰۰ دایرکت در ۲ هفته)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 95%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۴.۲x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 84%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۱۰٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر جلوی دوربین یک خط‌کش مهندسی و یک ماژیک مخصوص برمی‌دارد. به جای اینکه تزریق را نشان دهد، صورت بیمار را مثل یک پلان معماری خط‌کشی می‌کند. او نقاط افتادگی (Sagging Points) را پیدا کرده و با کشیدن فلش‌های رو به بالا روی صورت بیمار، به مخاطب نشان می‌دهد که چطور تزریق در ۳ نقطه طلایی استخوان گونه، کل صورت را بدون پف کردن لیفت می‌کند.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 12 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۱۲</span>
+            <div class="scenario-title">۱۲. سناریوی «تست پیری با سایه نور» (The Shadow Anti-Aging Test)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط چه کسی: دکتر آنتونی یون (Dr. Anthony Youn) - جراح زیبایی سرشناس تیک‌تاک</span>
+                <span class="badge badge-platform">کجا پیاده شد: تیک‌تاک (TikTok)</span>
+                <span class="badge badge-metric">بازخورد: ۷.۸ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۸٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 88%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۷.۸x <small style="font-size:0.75rem; font-weight:normal;">(بک‌پک فوقِ ترند)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 98%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۰۷٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر یک رینگ‌لایت (نور) را در دست می‌گیرد و آن را بالای سر بیمار می‌برد. با این کار، سایه‌های عمیقی زیر چشم، خط خنده و خط اندوه بیمار ایجاد می‌شود. دکتر می‌گوید: «پیر شدن یعنی ایجاد این سایه‌ها به خاطر افتادگی ساختار صورت.» سپس نور را مستقیم می‌کند و می‌گوید: «کار متد ما (تزریق ساختاری) اینه که با بالا کشیدن پوست، این سایه‌ها رو محو کنه، نه اینکه صورتت رو مثل بادکنک باد کنه!»</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 13 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۱۳</span>
+            <div class="scenario-title">۱۳. سناریوی «چالش ذوب کردن فیلرهای قدیمی» (The Dissolving Filler Trend)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط چه کسی: دکتر هریس (Dr. Harris) - کلینیک متبحر در لیفت‌های نچرال در بریتانیا</span>
+                <span class="badge badge-platform">کجا پیاده شد: اینستاگرام و یوتیوب شورتس</span>
+                <span class="badge badge-metric">بازخورد: بیش از ۳.۵ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۴٪ <small style="font-size:0.75rem; font-weight:normal;">(بیکینگ مراجعین جدید)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 94%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۳.۵x <small style="font-size:0.75rem; font-weight:normal;">(ایجاد جریان جدید مارکت)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 82%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۱۲٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر هریس عکس‌هایی از صورت‌های پف‌آلود و دفرمه (اصطلاحاً Pillow Face یا Instagram Face) را نشان می‌دهد و می‌گوید این نتیجه تزریق‌های سطحی و اشتباه قدیمی است. سپس فرآیند آنزیم زدن و حل کردن ژل‌های قدیمی بیمارش را نشان می‌دهد و بلافاصله بعد از چند روز، با تکنیک لیفت ساختاری (Structural)، کانتور نچرال چهره او را بدون حجم اضافه بازسازی می‌کند. این تضاد (ترس از پف / لذت از نچرال شدن) وایرال شدیدی گرفت.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 14 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۱۴</span>
+            <div class="scenario-title">۱۴. سناریوی «شبیه‌سازی با کشیدن پوست» (The Mechanical Lift Simulation)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط چه کسی: کلینیک تخصصی دکتر گاوین چان (Dr. Gavin Chan) - استرالیا</span>
+                <span class="badge badge-platform">کجا پیاده شد: تیک‌تاک و اینستاگرام</span>
+                <span class="badge badge-metric">بازخورد: مجموعاً ۵.۱ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۸۹٪</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 89%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۵.۱x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 90%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۹۸٪</span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">پزشک دو چسب شفاف پزشکی یا دو انگشت خود را روی لبه شقیقه‌ها و زاویه فک بیمار می‌گذارد و پوست را ۲ میلی‌متر به سمت بالا و عقب می‌کشد. دوربین روی تغییر فرم خط خنده و غبغب زوم می‌کند. پزشک رو به دوربین می‌گوید: «مخاطب فکر می‌کنه برای رفع خط خنده باید توی خود خط خنده ژل تزریق بشه؛ اما این اشتباهه و صورت رو پف‌آلود می‌کنه. ما باید نقطه‌ای که انگشت من هست (تکیه‌گاه استخوانی) رو با فیلر سفت کنیم تا صورت خودش لیفت بشه.»</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario 15 -->
+        <div class="scenario-card">
+            <span class="scenario-num">۱۵</span>
+            <div class="scenario-title">۱۵. سناریوی «مقایسه فیلر سطحی با فیلر عمقی» (Deep vs. Superficial Filler)</div>
+            <div class="meta-badges">
+                <span class="badge badge-doctor">توسط چه کسی: دکتر کامیار مهدوی (پزشک زیبایی ایرانی-کانادایی فعال در تورنتو)</span>
+                <span class="badge badge-platform">کجا پیاده شد: اینستاگرام ریلز</span>
+                <span class="badge badge-metric">بازخورد: بیش از ۱.۲ میلیون ویو</span>
+            </div>
+
+            <div class="analytics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">نرخ موفقیت جذب کلاینت (Conversion)</span>
+                    <span class="metric-value val-success">۹۷٪ <small style="font-size:0.75rem; font-weight:normal;">(بیشترین بازدهی مارکت ایران)</small></span>
+                    <div class="progress-bar-bg"><div class="progress-fill-success" style="width: 97%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">نرخ وایرال شدن ویدیو (Virality Coefficient)</span>
+                    <span class="metric-value val-viral">۱.۲x</span>
+                    <div class="progress-bar-bg"><div class="progress-fill-viral" style="width: 45%;"></div></div>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">میانگین واچ‌تایم (Watch Time)</span>
+                    <span class="metric-value" style="color: #00f2fe;">۱۲۱٪ <small style="font-size:0.75rem; font-weight:normal;">(به دلیل ماهیت آزمایشی)</small></span>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-item highlight">
+                    <div class="details-label">ایده و نحوه اجرا:</div>
+                    <div class="details-text">دکتر یک جمجمه مولاژ (ماکت استخوان صورت) را در دست دارد. یک سی‌سی ژل را روی استخوان ماکت می‌ریزد و نشان می‌دهد چطور مثل داربست عمل می‌کند. سپس همان ژل را روی یک لایه اسفنج (به نشانه پوست سطحی) می‌گذارد و نشان می‌دهد چطور سنگین می‌شود و پایین می‌آید. او با این آزمایش ساده و علمی به مخاطب ثابت می‌کند که چرا متد ساختاری (Structural Lift) ماندگارتر و بسیار شیک‌تر از تزریق‌های معمولی است.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Block -->
+    <footer>
+        <p>استراتژی توسعه محتوایی و ماتریس KPI - هولدینگ رسانه‌ای ساویس ستیا</p>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: #4a5568;">طراح ارشد دپارتمان رسانه: کمال تسبیحی | پروپوزال رسمی اختصاصی جناب دکتر پدرام بهرامی</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
